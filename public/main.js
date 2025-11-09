@@ -72,19 +72,43 @@ Array.from(thumbDown).forEach(function (element) {
 
 // let elementButton = document.querySelector("#year");
 // button
-document.getElementById("submitYear").addEventListener('click', getZeldaGames)
+document.getElementById("submitWish").addEventListener('click', (e)=> {
+  e.preventDefault()
+  
+const input = document.getElementById("wish").value
+sendWishesToDataBase(input)})
 //jsutin helped with logic
-function getZeldaGames() {
-  const input = document.getElementById("year").value
-  console.log('hi')
-  fetch(`/getZeldaGames/${input}`)
-    .then(response => response.text()) 
-    .then(data => {
-      document.getElementById('game').innerText = `${data}`
+function sendWishesToDataBase(input) {
+  
+  console.log('sendWishesToDataB function works')
+
+  //fetch from other project, edit to needs
+  fetch('profile', {
+    method: 'post',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      // 'name': name,
+      // 'msg': msg,
+      // 'thumbDown': thumbDown
+      // 'owner': owner,
+      // "comment" : comment,
+      // "game" : game
+      'input' : input
     })
-    .catch(error => {
-      console.error('Error fetching data:', error);
-    });
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data,"done")
+      // window.location.reload(true)
+    })
+  // fetch(`/getWishes/${input}`)
+  //   .then(response => response.text()) 
+  //   .then(data => {
+  //     document.getElementById('game').innerText = `${data}`
+  //   })
+  //   .catch(error => {
+  //     console.error('Error fetching data:', error);
+  //   });
   
 }
 //edit get zeldagames function to do something with wishlist
