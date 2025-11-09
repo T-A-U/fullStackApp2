@@ -87,3 +87,8 @@ function getZeldaGames() {
     });
   
 }
+//edit get zeldagames function to do something with wishlist
+
+
+
+//Make/edit this project  to be a wishlist, the user creates the database/items in the database, user able to upload, edit, delete by title

@@ -12,6 +12,6 @@
 
 Modified from Scotch.io's auth tutorial
 
-
+    HOLIDAY WISHLIST APP
     Complete Fullstack App2 w/ User Login (personal)
-    Another game related app WIP Heavy changes incoming
+    User can add items to a database with title and description  and that shows the list of titles in the DOM, and  they can edit and delete.
