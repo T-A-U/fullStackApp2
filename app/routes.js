@@ -32,25 +32,25 @@ app.post('/profile', (req, res) => {
   })
 })
 
-    app.get('/getWishes/:wish', isLoggedIn,async function(req, res) {
-      let wish = req.params.wish
-      let collection = await db.collection('Items!');
-      let results = await collection.find({}).toArray()
-      let arrayOfResults = Object.values(results[0])
-      let resObj
-      arrayOfResults.forEach((e,i) => {
-        //will have to change this following code as it's no longer a number
-        if(+e === +wish){
-          resObj = Object.keys(results[0])[i]
-        }
-      })
-      if(!resObj) resObj = 'No Games released this year!'
-      console.log(resObj)
-      res.send(resObj).status(200)
-      // res.send().status(200);
-      // res.render('index.ejs');
+  //   app.get('/getWishes/:wish', isLoggedIn,async function(req, res) {
+  //     let wish = req.params.wish
+  //     let collection = await db.collection('Items!');
+  //     let results = await collection.find({}).toArray()
+  //     let arrayOfResults = Object.values(results[0])
+  //     let resObj
+  //     arrayOfResults.forEach((e,i) => {
+  //       //will have to change this following code as it's no longer a number
+  //       if(+e === +wish){
+  //         resObj = Object.keys(results[0])[i]
+  //       }
+  //     })
+  //     if(!resObj) resObj = 'No Games released this year!'
+  //     console.log(resObj)
+  //     res.send(resObj).status(200)
+  //     // res.send().status(200);
+  //     // res.render('index.ejs');
       
-  });
+  // });
 
 
 
